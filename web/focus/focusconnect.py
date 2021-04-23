@@ -185,7 +185,7 @@ class FocusConnection:
         data_element = tree.find('dataHandler')
         if not data_element:
             doc = self._client.service.getDocument(id=id, bsn=bsn, isBulk=isBulk, isDms=isDms)
-            if doc['dataHandler']:
+            if doc and doc['dataHandler']:
                 data = doc['dataHandler']
                 filename = doc['fileName']
                 logger.error("fallback document method is used")
